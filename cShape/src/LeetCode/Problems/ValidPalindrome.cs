@@ -4,6 +4,29 @@ public static class ValidPalindrome
 {
     public static bool IsPalindrome(string s)
     {
-        throw new NotImplementedException("ValidPalindrome solution not implemented yet.");
+        int l = 0;
+        int r = s.Length - 1;
+
+        while (l < r)
+        {
+            while (l < r && !char.IsLetterOrDigit(s[l]))
+            {
+                l++;
+            }
+
+            while (l < r && !char.IsLetterOrDigit(s[r]))
+            {
+                r--;
+            }
+
+            if (char.ToLowerInvariant(s[l]) != char.ToLowerInvariant(s[r]))
+            {
+                return false;
+            }
+
+            l++;
+            r--;
+        }
+        return true;
     }
 }
