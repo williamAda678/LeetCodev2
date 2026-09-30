@@ -1,2 +1,9 @@
 def contains_duplicate(nums: list[int]) -> bool:
-    raise NotImplementedError("contains_duplicate solution not implemented yet.")
+      seen = set()
+
+      for i in nums:
+            if i in seen:
+                return True
+            seen.add(i)
+        
+      return False

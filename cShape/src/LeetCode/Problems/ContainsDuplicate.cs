@@ -4,6 +4,17 @@ public static class ContainsDuplicate
 {
     public static bool HasDuplicate(int[] nums)
     {
-        throw new NotImplementedException("ContainsDuplicate solution not implemented yet.");
+        HashSet<int> seen = [];
+
+        for (int i = 0; i < nums.Length; i++)
+        {
+            if (seen.Contains(nums[i]))
+            {
+                return true;
+            }
+            seen.Add(nums[i]);
+        }
+
+        return false;
     }
 }
