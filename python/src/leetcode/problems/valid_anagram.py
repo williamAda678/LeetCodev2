@@ -1,2 +1,12 @@
 def is_anagram(s: str, t: str) -> bool:
-    raise NotImplementedError("is_anagram solution not implemented yet.")
+     if len(s) != len(t):
+        return False
+
+     sLetter = {}
+     tLetter = {}
+
+     for i in range(len(s)):
+        sLetter[s[i]] = sLetter.get(s[i], 0) + 1
+        tLetter[t[i]] = tLetter.get(t[i], 0) + 1
+
+     return sLetter == tLetter
